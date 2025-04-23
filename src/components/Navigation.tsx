@@ -36,7 +36,7 @@ const Navigation = () => {
           <ThemeToggle />
           <Button className="glass-card hover:bg-electric-blue/20 text-white hover:ring-2 ring-electric-blue/50 transition-all duration-300" asChild>
             <a
-              href="https://linkedin.com"
+              href="https://www.linkedin.com/in/nickbohmer/"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-2"
