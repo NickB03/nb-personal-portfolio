@@ -1,4 +1,3 @@
-
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { ExternalLink } from "lucide-react";
@@ -24,7 +23,7 @@ const projects: Project[] = [
 
 const ProjectSection = () => {
   return (
-    <section className="py-24 container mx-auto px-4">
+    <section id="projects" className="py-24 container mx-auto px-4 scroll-mt-16">
       <motion.h2 
         className="text-3xl md:text-4xl font-bold mb-12 bg-gradient-to-r from-foreground to-foreground/70 bg-clip-text text-transparent"
         initial={{ opacity: 0, y: 20 }}
@@ -45,7 +44,7 @@ const ProjectSection = () => {
             transition={{ duration: 0.6, delay: index * 0.2 }}
           >
             <a href={project.link} target="_blank" rel="noopener noreferrer" className="block group">
-              <Card className="h-full transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-primary/5 hover:border-primary/50">
+              <Card className="h-full transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-[#1EAEDB]/20 dark:hover:shadow-[#1EAEDB]/10 hover:border-[#1EAEDB]/50">
                 <CardHeader className="relative aspect-video overflow-hidden rounded-t-lg">
                   <img
                     src={project.image}
