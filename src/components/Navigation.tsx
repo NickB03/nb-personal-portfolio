@@ -1,7 +1,7 @@
-
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { LinkedinIcon } from "lucide-react";
+import { ThemeToggle } from "./ThemeToggle";
 
 const Navigation = () => {
   const [mounted, setMounted] = useState(false);
@@ -39,8 +39,9 @@ const Navigation = () => {
           </a>
         </div>
 
-        {/* Right side - CTA */}
+        {/* Right side - Theme Toggle + CTA */}
         <div className="flex items-center space-x-4">
+          <ThemeToggle />
           <Button variant="default" asChild>
             <a
               href="https://linkedin.com"
