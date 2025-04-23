@@ -1,0 +1,48 @@
+
+import { Button } from "@/components/ui/button";
+import { LinkedinIcon } from "lucide-react";
+import ProjectCarousel from "./ProjectCarousel";
+
+const Hero = () => {
+  return (
+    <section className="min-h-screen pt-16 flex items-center" id="main-content">
+      <div className="container mx-auto px-4 grid md:grid-cols-2 gap-12 items-center">
+        {/* Left Column */}
+        <div className="space-y-6">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold bg-gradient-to-r from-foreground to-foreground/70 bg-clip-text text-transparent hover:from-primary hover:to-primary/70 transition-all duration-300">
+            Nick B.
+          </h1>
+          <p className="text-2xl md:text-3xl text-muted-foreground">
+            AI Innovation Through a Product Lens
+          </p>
+          <p className="text-lg text-muted-foreground/80">
+            Building the future of AI-powered products with a focus on user experience and business impact.
+          </p>
+          <div className="flex flex-wrap gap-4">
+            <Button size="lg" asChild>
+              <a href="#projects">View Projects</a>
+            </Button>
+            <Button size="lg" variant="outline" asChild>
+              <a
+                href="https://linkedin.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2"
+              >
+                Message Me on LinkedIn
+                <LinkedinIcon className="h-4 w-4" />
+              </a>
+            </Button>
+          </div>
+        </div>
+
+        {/* Right Column */}
+        <div className="relative">
+          <ProjectCarousel />
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default Hero;
