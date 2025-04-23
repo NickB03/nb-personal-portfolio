@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { LinkedinIcon } from "lucide-react";
@@ -21,10 +22,8 @@ const Navigation = () => {
       </a>
 
       <nav className="container max-w-screen-lg mx-auto flex items-center justify-between h-16 px-4">
-        {/* Left side - Logo/Name */}
-        <a href="/" className="text-lg font-semibold">
-          Nick B.
-        </a>
+        {/* Left side - Empty now as we removed the name */}
+        <div className="w-8"></div>
 
         {/* Center - Navigation Links */}
         <div className="hidden md:flex space-x-8">
@@ -48,9 +47,10 @@ const Navigation = () => {
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-2"
+              aria-label="Connect with Nick Bohmer on LinkedIn"
             >
               Let's Connect
-              <LinkedinIcon className="h-4 w-4" />
+              <LinkedinIcon className="h-4 w-4 transition-colors hover:text-soft-orange" />
             </a>
           </Button>
         </div>

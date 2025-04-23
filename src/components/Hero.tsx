@@ -15,7 +15,7 @@ const Hero = () => {
           transition={{ duration: 0.6 }}
         >
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold bg-gradient-to-r from-foreground to-foreground/70 bg-clip-text text-transparent hover:from-electric-blue hover:to-electric-blue/70 transition-all duration-300">
-            Nick B.
+            Nick Bohmer
           </h1>
           <p className="text-2xl md:text-3xl text-muted-foreground">
             AI Innovation Through a Product Lens

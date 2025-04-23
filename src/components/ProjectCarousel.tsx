@@ -1,3 +1,4 @@
+
 import {
   Carousel,
   CarouselContent,
@@ -10,12 +11,12 @@ const projects = [
   {
     title: "AnalystAI",
     description: "AI-powered financial analysis platform",
-    image: "/placeholder.svg",
+    image: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?auto=format&fit=crop&w=600&h=400&q=80",
   },
   {
     title: "VANA",
     description: "Virtual Assistant for Network Administration",
-    image: "/placeholder.svg",
+    image: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=600&h=400&q=80",
   },
 ];
 
@@ -30,8 +31,9 @@ const ProjectCarousel = () => {
                 <div className="aspect-video relative rounded-lg overflow-hidden bg-muted">
                   <img
                     src={project.image}
-                    alt={project.title}
-                    className="object-cover w-full h-full"
+                    alt={`${project.title} preview`}
+                    className="object-cover w-full h-full transition-transform duration-300 group-hover:scale-105"
+                    loading="lazy"
                   />
                 </div>
                 <div className="mt-4">
