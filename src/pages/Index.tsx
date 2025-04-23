@@ -2,6 +2,7 @@
 import Navigation from "@/components/Navigation";
 import Hero from "@/components/Hero";
 import ProjectSection from "@/components/ProjectSection";
+import About from "@/components/About";
 
 const Index = () => {
   return (
@@ -9,6 +10,7 @@ const Index = () => {
       <Navigation />
       <Hero />
       <ProjectSection />
+      <About />
     </div>
   );
 };
