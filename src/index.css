@@ -97,6 +97,16 @@
   }
 
   body {
-    @apply bg-background text-foreground antialiased;
+    @apply bg-gradient-to-br from-[#0A0F1C] via-[#0E172A] to-[#020409] text-foreground antialiased min-h-screen;
+  }
+}
+
+@layer utilities {
+  .glass-card {
+    @apply bg-white/5 backdrop-blur-md border border-white/10 shadow-lg;
+  }
+
+  .text-gradient {
+    @apply bg-gradient-to-r from-electric-blue to-white bg-clip-text text-transparent;
   }
 }

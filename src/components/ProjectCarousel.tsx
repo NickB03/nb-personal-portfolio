@@ -27,8 +27,8 @@ const ProjectCarousel = () => {
         {projects.map((project, index) => (
           <CarouselItem key={index}>
             <div className="p-1">
-              <div className="group relative overflow-hidden rounded-xl border border-border bg-card p-6 hover:border-electric-blue/50 hover:shadow-lg hover:shadow-electric-blue/20 transition-all duration-300 hover:translate-y-[-4px]">
-                <div className="aspect-video relative rounded-lg overflow-hidden bg-muted">
+              <div className="group glass-card rounded-xl p-6 hover:ring-2 ring-electric-blue/30 transition-all duration-300 hover:translate-y-[-4px]">
+                <div className="aspect-video relative rounded-lg overflow-hidden">
                   <img
                     src={project.image}
                     alt={`${project.title} preview`}
@@ -37,7 +37,7 @@ const ProjectCarousel = () => {
                   />
                 </div>
                 <div className="mt-4">
-                  <h3 className="text-xl font-semibold">{project.title}</h3>
+                  <h3 className="text-xl font-semibold text-gradient">{project.title}</h3>
                   <p className="text-muted-foreground">{project.description}</p>
                 </div>
               </div>
@@ -45,8 +45,8 @@ const ProjectCarousel = () => {
           </CarouselItem>
         ))}
       </CarouselContent>
-      <CarouselPrevious className="text-electric-blue hover:text-soft-orange transition-colors duration-300 hover:bg-background/80" />
-      <CarouselNext className="text-electric-blue hover:text-soft-orange transition-colors duration-300 hover:bg-background/80" />
+      <CarouselPrevious className="text-electric-blue hover:text-soft-orange transition-colors duration-300 hover:bg-white/5" />
+      <CarouselNext className="text-electric-blue hover:text-soft-orange transition-colors duration-300 hover:bg-white/5" />
     </Carousel>
   );
 };

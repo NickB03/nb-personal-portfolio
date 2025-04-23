@@ -12,36 +12,29 @@ const Navigation = () => {
   }, []);
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-sm border-b border-border">
-      {/* Skip to main content link for accessibility */}
-      <a
-        href="#main-content"
-        className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-electric-blue focus:text-white focus:rounded"
-      >
+    <header className="fixed top-0 left-0 right-0 z-50 glass-card border-b border-white/10">
+      <a href="#main-content" className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-electric-blue focus:text-white focus:rounded">
         Skip to main content
       </a>
 
       <nav className="container max-w-screen-lg mx-auto flex items-center justify-between h-16 px-4">
-        {/* Left side - Empty now as we removed the name */}
         <div className="w-8"></div>
 
-        {/* Center - Navigation Links */}
         <div className="hidden md:flex space-x-8">
-          <a href="#projects" className="hover:text-electric-blue transition-colors">
+          <a href="#projects" className="text-white/80 hover:text-electric-blue transition-colors">
             Projects
           </a>
-          <a href="#about" className="hover:text-electric-blue transition-colors">
+          <a href="#about" className="text-white/80 hover:text-electric-blue transition-colors">
             About
           </a>
-          <a href="#contact" className="hover:text-electric-blue transition-colors">
+          <a href="#contact" className="text-white/80 hover:text-electric-blue transition-colors">
             Contact
           </a>
         </div>
 
-        {/* Right side - Theme Toggle + CTA */}
         <div className="flex items-center space-x-4">
           <ThemeToggle />
-          <Button className="bg-electric-blue hover:bg-electric-blue/90 text-white" asChild>
+          <Button className="glass-card hover:bg-electric-blue/20 text-white hover:ring-2 ring-electric-blue/50 transition-all duration-300" asChild>
             <a
               href="https://linkedin.com"
               target="_blank"

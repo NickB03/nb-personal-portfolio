@@ -1,3 +1,4 @@
+
 import { Button } from "@/components/ui/button";
 import { LinkedinIcon, ChevronDown } from "lucide-react";
 import ProjectCarousel from "./ProjectCarousel";
@@ -14,19 +15,19 @@ const Hero = () => {
           animate={{ opacity: 1 }}
           transition={{ duration: 0.6 }}
         >
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold bg-gradient-to-r from-foreground to-foreground/70 bg-clip-text text-transparent hover:from-electric-blue hover:to-electric-blue/70 transition-all duration-300">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gradient">
             Nick Bohmer
           </h1>
-          <p className="text-2xl md:text-3xl text-muted-foreground">
+          <p className="text-2xl md:text-3xl bg-gradient-to-r from-white/90 to-white/40 bg-clip-text text-transparent">
             AI Innovation Through a Product Lens
           </p>
-          <p className="text-lg text-muted-foreground/80">
+          <p className="text-lg text-white/80">
             Building the future of AI-powered products with a focus on user experience and business impact.
           </p>
           <div className="flex flex-wrap gap-4">
             <Button 
               size="lg" 
-              className="bg-electric-blue hover:bg-electric-blue/90 text-white"
+              className="glass-card hover:bg-electric-blue/20 text-white hover:ring-2 ring-electric-blue/50 transition-all duration-300"
               asChild
             >
               <a href="#projects">View Projects</a>
@@ -34,7 +35,7 @@ const Hero = () => {
             <Button 
               size="lg" 
               variant="outline" 
-              className="border-electric-blue text-electric-blue hover:bg-electric-blue/10"
+              className="glass-card border-electric-blue/50 text-electric-blue hover:bg-electric-blue/10 hover:ring-2 ring-electric-blue/50 transition-all duration-300"
               asChild
             >
               <a
@@ -50,6 +51,16 @@ const Hero = () => {
           </div>
         </motion.div>
 
+        {/* Right Column */}
+        <motion.div 
+          className="relative"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+        >
+          <ProjectCarousel />
+        </motion.div>
+
         {/* Scroll Cue */}
         <motion.div 
           className="absolute bottom-8 left-1/2 -translate-x-1/2 hidden md:block"
@@ -61,20 +72,10 @@ const Hero = () => {
             animate={{ y: [0, 8, 0] }}
             transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
           >
-            <a href="#projects" aria-label="Scroll to projects">
-              <ChevronDown className="h-8 w-8 text-electric-blue hover:text-soft-orange transition-colors" />
+            <a href="#projects" className="block p-2 rounded-full glass-card hover:ring-2 ring-electric-blue/30 transition-all duration-300">
+              <ChevronDown className="h-6 w-6 text-electric-blue hover:text-soft-orange transition-colors" />
             </a>
           </motion.div>
-        </motion.div>
-
-        {/* Right Column */}
-        <motion.div 
-          className="relative"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-        >
-          <ProjectCarousel />
         </motion.div>
       </div>
     </section>
