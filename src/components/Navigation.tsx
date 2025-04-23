@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { LinkedinIcon } from "lucide-react";
@@ -16,12 +15,12 @@ const Navigation = () => {
       {/* Skip to main content link for accessibility */}
       <a
         href="#main-content"
-        className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-electric-blue focus:text-neutral-light focus:rounded"
+        className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-electric-blue focus:text-white focus:rounded"
       >
         Skip to main content
       </a>
 
-      <nav className="container mx-auto flex items-center justify-between h-16 px-4">
+      <nav className="container max-w-screen-lg mx-auto flex items-center justify-between h-16 px-4">
         {/* Left side - Logo/Name */}
         <a href="/" className="text-lg font-semibold">
           Nick B.

@@ -1,4 +1,3 @@
-
 import { motion } from "framer-motion";
 import { LightbulbIcon, WrenchIcon, MessageCircleIcon, BarChart3Icon, RefreshCcwIcon, SendIcon } from "lucide-react";
 import { cn } from "@/lib/utils";
@@ -38,7 +37,7 @@ const timelineSteps = [
 
 const ProductTimeline = () => {
   return (
-    <div className="relative">
+    <div className="relative max-w-screen-lg mx-auto">
       <motion.h3
         className="text-2xl font-bold mb-12 text-center"
         initial={{ opacity: 0, y: 20 }}
@@ -51,7 +50,7 @@ const ProductTimeline = () => {
 
       <div className="relative max-w-2xl mx-auto">
         {/* Glowing line connecting the steps */}
-        <div className="absolute left-4 top-0 bottom-0 w-0.5 bg-gradient-to-b from-electric-blue/50 via-electric-blue/30 to-transparent" />
+        <div className="absolute left-4 top-0 bottom-0 w-0.5 bg-gradient-to-b from-electric-blue via-electric-blue/30 to-transparent" />
 
         <div className="space-y-12">
           {timelineSteps.map((step, index) => (

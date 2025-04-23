@@ -1,4 +1,3 @@
-
 import {
   Carousel,
   CarouselContent,
@@ -22,8 +21,8 @@ const projects = [
 
 const ProjectCarousel = () => {
   return (
-    <Carousel className="w-full max-w-xl mx-auto">
-      <CarouselContent>
+    <Carousel className="w-full max-w-xl mx-auto" opts={{ duration: 30, loop: true }}>
+      <CarouselContent className="py-4">
         {projects.map((project, index) => (
           <CarouselItem key={index}>
             <div className="p-1">
@@ -44,8 +43,8 @@ const ProjectCarousel = () => {
           </CarouselItem>
         ))}
       </CarouselContent>
-      <CarouselPrevious className="text-electric-blue hover:text-soft-orange hover:bg-background/80" />
-      <CarouselNext className="text-electric-blue hover:text-soft-orange hover:bg-background/80" />
+      <CarouselPrevious className="text-electric-blue hover:text-soft-orange transition-colors duration-300 hover:bg-background/80" />
+      <CarouselNext className="text-electric-blue hover:text-soft-orange transition-colors duration-300 hover:bg-background/80" />
     </Carousel>
   );
 };

@@ -1,13 +1,12 @@
-
 import { Button } from "@/components/ui/button";
-import { LinkedinIcon } from "lucide-react";
+import { LinkedinIcon, ChevronDown } from "lucide-react";
 import ProjectCarousel from "./ProjectCarousel";
 import { motion } from "framer-motion";
 
 const Hero = () => {
   return (
-    <section className="min-h-screen pt-16 flex items-center scroll-mt-16" id="main-content">
-      <div className="container mx-auto px-4 grid md:grid-cols-2 gap-12 items-center">
+    <section className="min-h-screen pt-16 flex items-center relative scroll-mt-16" id="main-content">
+      <div className="container max-w-screen-lg mx-auto px-4 grid md:grid-cols-2 gap-12 items-center">
         {/* Left Column */}
         <motion.div 
           className="space-y-6"
@@ -49,6 +48,23 @@ const Hero = () => {
               </a>
             </Button>
           </div>
+        </motion.div>
+
+        {/* Scroll Cue */}
+        <motion.div 
+          className="absolute bottom-8 left-1/2 -translate-x-1/2 hidden md:block"
+          initial={{ opacity: 0, y: -10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 1, duration: 0.6 }}
+        >
+          <motion.div
+            animate={{ y: [0, 8, 0] }}
+            transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
+          >
+            <a href="#projects" aria-label="Scroll to projects">
+              <ChevronDown className="h-8 w-8 text-electric-blue hover:text-soft-orange transition-colors" />
+            </a>
+          </motion.div>
         </motion.div>
 
         {/* Right Column */}
