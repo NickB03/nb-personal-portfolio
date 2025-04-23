@@ -1,14 +1,19 @@
-
 import { Button } from "@/components/ui/button";
 import { LinkedinIcon } from "lucide-react";
 import ProjectCarousel from "./ProjectCarousel";
+import { motion } from "framer-motion";
 
 const Hero = () => {
   return (
-    <section className="min-h-screen pt-16 flex items-center" id="main-content">
+    <section className="min-h-screen pt-16 flex items-center scroll-mt-16" id="main-content">
       <div className="container mx-auto px-4 grid md:grid-cols-2 gap-12 items-center">
         {/* Left Column */}
-        <div className="space-y-6">
+        <motion.div 
+          className="space-y-6"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.6 }}
+        >
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold bg-gradient-to-r from-foreground to-foreground/70 bg-clip-text text-transparent hover:from-primary hover:to-primary/70 transition-all duration-300">
             Nick B.
           </h1>
@@ -34,12 +39,17 @@ const Hero = () => {
               </a>
             </Button>
           </div>
-        </div>
+        </motion.div>
 
         {/* Right Column */}
-        <div className="relative">
+        <motion.div 
+          className="relative"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+        >
           <ProjectCarousel />
-        </div>
+        </motion.div>
       </div>
     </section>
   );
