@@ -1,3 +1,4 @@
+
 import { motion } from "framer-motion";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
@@ -40,8 +41,8 @@ const About = () => {
                     <div className="absolute -inset-0.5 rounded-full bg-gradient-to-r from-electric-blue to-electric-blue/50 opacity-75 blur-lg group-hover:opacity-100 transition duration-300"></div>
                     <Avatar className="relative w-48 h-48 border-2 border-electric-blue/20 hover:border-electric-blue/50 transition duration-300">
                       <AvatarImage
-                        src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=800&q=80"
-                        alt="Nick's profile"
+                        src="/lovable-uploads/7a9b29a5-233f-483b-9e2f-bad3d6fd710c.png"
+                        alt="Nick Bohmer's profile"
                         className="object-cover"
                       />
                       <AvatarFallback>NB</AvatarFallback>
