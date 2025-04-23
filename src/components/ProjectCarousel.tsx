@@ -27,7 +27,7 @@ const ProjectCarousel = () => {
         {projects.map((project, index) => (
           <CarouselItem key={index}>
             <div className="p-1">
-              <div className="group relative overflow-hidden rounded-xl border border-border bg-card p-6 hover:border-primary/50 hover:shadow-lg transition-all duration-300 hover:translate-y-[-4px]">
+              <div className="group relative overflow-hidden rounded-xl border border-border bg-card p-6 hover:border-electric-blue/50 hover:shadow-lg hover:shadow-electric-blue/20 transition-all duration-300 hover:translate-y-[-4px]">
                 <div className="aspect-video relative rounded-lg overflow-hidden bg-muted">
                   <img
                     src={project.image}
@@ -44,8 +44,8 @@ const ProjectCarousel = () => {
           </CarouselItem>
         ))}
       </CarouselContent>
-      <CarouselPrevious />
-      <CarouselNext />
+      <CarouselPrevious className="text-electric-blue hover:text-soft-orange hover:bg-background/80" />
+      <CarouselNext className="text-electric-blue hover:text-soft-orange hover:bg-background/80" />
     </Carousel>
   );
 };

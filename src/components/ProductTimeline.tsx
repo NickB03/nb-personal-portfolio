@@ -51,7 +51,7 @@ const ProductTimeline = () => {
 
       <div className="relative max-w-2xl mx-auto">
         {/* Glowing line connecting the steps */}
-        <div className="absolute left-4 top-0 bottom-0 w-0.5 bg-gradient-to-b from-[#4F9DF7]/50 via-[#4F9DF7]/30 to-transparent" />
+        <div className="absolute left-4 top-0 bottom-0 w-0.5 bg-gradient-to-b from-electric-blue/50 via-electric-blue/30 to-transparent" />
 
         <div className="space-y-12">
           {timelineSteps.map((step, index) => (
@@ -63,10 +63,10 @@ const ProductTimeline = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
             >
-              <div className="absolute left-0 p-2 rounded-full bg-background border border-[#4F9DF7]/20 shadow-lg shadow-[#4F9DF7]/5">
+              <div className="absolute left-0 p-2 rounded-full bg-background border border-electric-blue/20 shadow-lg shadow-electric-blue/5 group-hover:border-electric-blue/50 transition-colors duration-300">
                 <step.icon className={cn(
                   "w-4 h-4",
-                  "text-[#4F9DF7]"
+                  "text-electric-blue hover:text-soft-orange transition-colors duration-300"
                 )} />
               </div>
               <div>
@@ -82,4 +82,3 @@ const ProductTimeline = () => {
 };
 
 export default ProductTimeline;
-

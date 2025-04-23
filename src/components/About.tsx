@@ -37,8 +37,8 @@ const About = () => {
             <Tooltip>
               <TooltipTrigger asChild>
                 <div className="relative group">
-                  <div className="absolute -inset-0.5 rounded-full bg-gradient-to-r from-[#4F9DF7] to-[#4F9DF7]/50 opacity-75 blur-lg group-hover:opacity-100 transition duration-300"></div>
-                  <Avatar className="relative w-48 h-48 border-2 border-[#4F9DF7]/20 hover:border-[#4F9DF7]/50 transition duration-300">
+                  <div className="absolute -inset-0.5 rounded-full bg-gradient-to-r from-electric-blue to-electric-blue/50 opacity-75 blur-lg group-hover:opacity-100 transition duration-300"></div>
+                  <Avatar className="relative w-48 h-48 border-2 border-electric-blue/20 hover:border-electric-blue/50 transition duration-300">
                     <AvatarImage
                       src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=800&q=80"
                       alt="Nick's profile"
@@ -73,7 +73,7 @@ const About = () => {
           <Button
             variant="outline"
             size="lg"
-            className="group hover:border-[#4F9DF7]/50 hover:shadow-lg hover:shadow-[#4F9DF7]/20"
+            className="group border-electric-blue text-electric-blue hover:bg-electric-blue/10 hover:border-electric-blue/50 hover:shadow-lg hover:shadow-electric-blue/20"
             asChild
           >
             <a
@@ -96,4 +96,3 @@ const About = () => {
 };
 
 export default About;
-

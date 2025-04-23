@@ -1,3 +1,4 @@
+
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { ExternalLink, ArrowRight } from "lucide-react";
@@ -40,7 +41,7 @@ const ProjectSection = () => {
       <div className="grid md:grid-cols-2 gap-8 relative">
         {isMobile && (
           <motion.div
-            className="absolute -top-8 left-1/2 -translate-x-1/2 flex items-center gap-2 text-sm text-muted-foreground"
+            className="absolute -top-8 left-1/2 -translate-x-1/2 flex items-center gap-2 text-sm text-electric-blue"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 1 }}
@@ -65,7 +66,7 @@ const ProjectSection = () => {
               className="block group focus-visible:outline-none"
               aria-label={`View ${project.title} project details`}
             >
-              <Card className="h-full transition-all duration-300 ease-in-out hover:-translate-y-1 hover:shadow-lg hover:shadow-[#4F9DF7]/20 hover:ring-2 hover:ring-[#4F9DF7]/50 focus-visible:ring-2 focus-visible:ring-[#4F9DF7]/50">
+              <Card className="h-full transition-all duration-300 ease-in-out hover:-translate-y-1 hover:shadow-lg hover:shadow-electric-blue/20 hover:ring-2 hover:ring-electric-blue/50 focus-visible:ring-2 focus-visible:ring-electric-blue/50">
                 <CardHeader className="relative aspect-[16/9] overflow-hidden rounded-t-lg p-0">
                   <img
                     src={project.image}
@@ -74,7 +75,7 @@ const ProjectSection = () => {
                   />
                 </CardHeader>
                 <CardContent className="p-6">
-                  <CardTitle className="flex items-center justify-between mb-3 group-hover:text-[#4F9DF7] transition-colors duration-300 ease-in-out">
+                  <CardTitle className="flex items-center justify-between mb-3 group-hover:text-electric-blue transition-colors duration-300 ease-in-out">
                     {project.title}
                     <ExternalLink className="h-4 w-4 opacity-50 group-hover:opacity-100 transition-opacity duration-300" />
                   </CardTitle>
@@ -86,7 +87,7 @@ const ProjectSection = () => {
                       <Badge 
                         key={tag} 
                         variant="secondary" 
-                        className="text-xs font-medium px-2.5 py-0.5"
+                        className="text-xs font-medium px-2.5 py-0.5 bg-card hover:bg-soft-orange/10 border border-soft-orange/30"
                       >
                         {tag}
                       </Badge>

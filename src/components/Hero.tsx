@@ -1,3 +1,4 @@
+
 import { Button } from "@/components/ui/button";
 import { LinkedinIcon } from "lucide-react";
 import ProjectCarousel from "./ProjectCarousel";
@@ -14,7 +15,7 @@ const Hero = () => {
           animate={{ opacity: 1 }}
           transition={{ duration: 0.6 }}
         >
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold bg-gradient-to-r from-foreground to-foreground/70 bg-clip-text text-transparent hover:from-primary hover:to-primary/70 transition-all duration-300">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold bg-gradient-to-r from-foreground to-foreground/70 bg-clip-text text-transparent hover:from-electric-blue hover:to-electric-blue/70 transition-all duration-300">
             Nick B.
           </h1>
           <p className="text-2xl md:text-3xl text-muted-foreground">
@@ -24,10 +25,19 @@ const Hero = () => {
             Building the future of AI-powered products with a focus on user experience and business impact.
           </p>
           <div className="flex flex-wrap gap-4">
-            <Button size="lg" asChild>
+            <Button 
+              size="lg" 
+              className="bg-electric-blue hover:bg-electric-blue/90 text-white"
+              asChild
+            >
               <a href="#projects">View Projects</a>
             </Button>
-            <Button size="lg" variant="outline" asChild>
+            <Button 
+              size="lg" 
+              variant="outline" 
+              className="border-electric-blue text-electric-blue hover:bg-electric-blue/10"
+              asChild
+            >
               <a
                 href="https://linkedin.com"
                 target="_blank"

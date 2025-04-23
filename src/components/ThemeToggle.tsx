@@ -21,7 +21,7 @@ export function ThemeToggle() {
           animate={{ rotate: 360 }}
           transition={{ duration: 0.5 }}
         >
-          <Moon className="h-5 w-5 text-electric-blue hover:text-electric-blue/80" />
+          <Moon className="h-5 w-5 text-electric-blue hover:text-soft-orange transition-colors" />
         </motion.div>
       ) : (
         <motion.div
@@ -29,7 +29,7 @@ export function ThemeToggle() {
           animate={{ rotate: 360 }}
           transition={{ duration: 0.5 }}
         >
-          <Sun className="h-5 w-5 text-electric-blue hover:text-electric-blue/80" />
+          <Sun className="h-5 w-5 text-electric-blue hover:text-soft-orange transition-colors" />
         </motion.div>
       )}
     </Button>
