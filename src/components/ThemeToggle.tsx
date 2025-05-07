@@ -50,7 +50,7 @@ export function ThemeToggle() {
           animate={{ rotate: 360 }}
           transition={{ duration: 0.5 }}
         >
-          <Sun className="h-5 w-5 text-gradient hover:opacity-80 transition-opacity" />
+          <Sun className="h-5 w-5 text-superhuman-light hover:text-white transition-colors" />
         </motion.div>
       ) : (
         <motion.div
@@ -58,7 +58,7 @@ export function ThemeToggle() {
           animate={{ rotate: 360 }}
           transition={{ duration: 0.5 }}
         >
-          <Moon className="h-5 w-5 text-gradient hover:opacity-80 transition-opacity" />
+          <Moon className="h-5 w-5 text-superhuman-blue hover:text-superhuman-purple transition-colors" />
         </motion.div>
       )}
     </Button>

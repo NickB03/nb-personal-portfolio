@@ -21,13 +21,13 @@ const Navigation = () => {
         <div className="w-8"></div>
 
         <div className="hidden md:flex space-x-8">
-          <a href="#projects" className="font-medium text-superhuman-blue hover:text-soft-orange transition-colors dark:text-white/90 dark:hover:text-soft-orange">
+          <a href="#projects" className="font-medium text-superhuman-blue hover:text-superhuman-purple transition-colors dark:text-white/90 dark:hover:text-superhuman-light">
             Projects
           </a>
-          <a href="#about" className="font-medium text-superhuman-blue hover:text-soft-orange transition-colors dark:text-white/90 dark:hover:text-soft-orange">
+          <a href="#about" className="font-medium text-superhuman-blue hover:text-superhuman-purple transition-colors dark:text-white/90 dark:hover:text-superhuman-light">
             About
           </a>
-          <a href="#contact" className="font-medium text-superhuman-blue hover:text-soft-orange transition-colors dark:text-white/90 dark:hover:text-soft-orange">
+          <a href="#contact" className="font-medium text-superhuman-blue hover:text-superhuman-purple transition-colors dark:text-white/90 dark:hover:text-superhuman-light">
             Contact
           </a>
         </div>

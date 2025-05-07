@@ -48,7 +48,7 @@
     
     /* Define a darker blue color */
     --electric-blue-dark: 213 70% 40%;
-    --superhuman-blue: 220 60% 24%;
+    --superhuman-blue: 283 60% 24%;
     --superhuman-purple: 271 40% 49%;
     --superhuman-light: 278 49% 69%;
   }
@@ -116,18 +116,18 @@
     @apply bg-white;
   }
   
-  /* Superhuman-inspired gradient background with increased intensity */
+  /* Superhuman-inspired gradient background */
   .light #root {
-    background: radial-gradient(circle at 65% 15%, rgba(137, 73, 181, 0.5) 0%, rgba(255, 255, 255, 0) 45%), 
-                radial-gradient(circle at 40% 60%, rgba(69, 86, 146, 0.6) 0%, rgba(255, 255, 255, 0) 50%),
+    background: radial-gradient(circle at 65% 15%, rgba(137, 73, 181, 0.3) 0%, rgba(255, 255, 255, 0) 35%), 
+                radial-gradient(circle at 40% 60%, rgba(69, 86, 146, 0.4) 0%, rgba(255, 255, 255, 0) 40%),
                 linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
     min-height: 100vh;
   }
   
-  /* Dark mode gradient with increased intensity */
+  /* Dark mode gradient like Superhuman */
   .dark #root {
-    background: radial-gradient(circle at 65% 15%, rgba(137, 73, 181, 0.5) 0%, rgba(0, 0, 0, 0) 45%), 
-                radial-gradient(circle at 40% 60%, rgba(69, 86, 146, 0.6) 0%, rgba(0, 0, 0, 0) 50%),
+    background: radial-gradient(circle at 65% 15%, rgba(137, 73, 181, 0.3) 0%, rgba(0, 0, 0, 0) 35%), 
+                radial-gradient(circle at 40% 60%, rgba(69, 86, 146, 0.4) 0%, rgba(0, 0, 0, 0) 40%),
                 linear-gradient(135deg, #0A0F1C 0%, #1B1E2D 100%);
     min-height: 100vh;
   }
@@ -143,14 +143,13 @@
     @apply bg-white/80 backdrop-blur-md border border-gray-200/50 shadow-md;
   }
 
-  /* Updated text gradient: blue to orange */
   .text-gradient {
-    @apply bg-gradient-to-r from-superhuman-blue via-soft-orange/90 to-soft-orange bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-superhuman-blue via-superhuman-purple to-superhuman-light bg-clip-text text-transparent;
   }
   
-  /* Different gradient for dark mode, still blue to orange */
+  /* Different gradient for dark mode */
   .dark .text-gradient {
-    @apply bg-gradient-to-r from-electric-blue via-soft-orange/90 to-soft-orange bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-white via-superhuman-light to-electric-blue bg-clip-text text-transparent;
   }
   
   /* Superhuman-inspired button styles */
