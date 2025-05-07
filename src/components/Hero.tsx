@@ -18,16 +18,16 @@ const Hero = () => {
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gradient">
             Nick Bohmer
           </h1>
-          <p className="text-2xl md:text-3xl text-superhuman-blue dark:text-white/90">
+          <p className="text-2xl md:text-3xl text-foreground/90 dark:bg-gradient-to-r dark:from-white/90 dark:to-white/40 dark:bg-clip-text dark:text-transparent">
             AI Innovation Through a Product Lens
           </p>
-          <p className="text-lg text-superhuman-blue/90 dark:text-white/80">
+          <p className="text-lg text-foreground/80 dark:text-white/80">
             Building the future of AI-powered products with a focus on user experience and business impact.
           </p>
           <div className="flex flex-wrap gap-4">
             <Button 
               size="lg" 
-              className="superhuman-button hover:opacity-90"
+              className="bg-electric-blue hover:bg-electric-blue/90 text-white dark:glass-card dark:hover:bg-electric-blue/20 dark:hover:ring-2 dark:ring-electric-blue/50 transition-all duration-300"
               asChild
             >
               <a href="#projects">View Projects</a>
@@ -35,7 +35,7 @@ const Hero = () => {
             <Button 
               size="lg" 
               variant="outline" 
-              className="border-superhuman-purple text-superhuman-blue hover:bg-superhuman-purple/10 hover:ring-2 ring-superhuman-purple/50 transition-all duration-300 dark:glass-card dark:text-white dark:border-superhuman-light"
+              className="border-electric-blue/50 text-electric-blue hover:bg-electric-blue/10 hover:ring-2 ring-electric-blue/50 transition-all duration-300 dark:glass-card"
               asChild
             >
               <a
@@ -72,8 +72,8 @@ const Hero = () => {
             animate={{ y: [0, 8, 0] }}
             transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
           >
-            <a href="#projects" className="block p-2 rounded-full bg-background/50 backdrop-blur-sm border border-border hover:ring-2 ring-superhuman-purple/30 transition-all duration-300 dark:glass-card">
-              <ChevronDown className="h-6 w-6 text-superhuman-purple hover:text-superhuman-light transition-colors dark:text-superhuman-light" />
+            <a href="#projects" className="block p-2 rounded-full bg-background/50 backdrop-blur-sm border border-border hover:ring-2 ring-electric-blue/30 transition-all duration-300 dark:glass-card">
+              <ChevronDown className="h-6 w-6 text-electric-blue hover:text-soft-orange transition-colors" />
             </a>
           </motion.div>
         </motion.div>

@@ -144,12 +144,12 @@
   }
 
   .text-gradient {
-    @apply bg-gradient-to-r from-superhuman-blue via-superhuman-purple to-superhuman-light bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-electric-blue to-navy-dark bg-clip-text text-transparent;
   }
   
   /* Different gradient for dark mode */
   .dark .text-gradient {
-    @apply bg-gradient-to-r from-white via-superhuman-light to-electric-blue bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-electric-blue to-white bg-clip-text text-transparent;
   }
   
   /* Superhuman-inspired button styles */
