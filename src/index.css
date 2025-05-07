@@ -1,3 +1,4 @@
+
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
 @tailwind base;
@@ -7,31 +8,31 @@
 @layer base {
   :root {
     --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    --foreground: 227 39% 15%; /* darker text for better contrast */
 
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 227 39% 15%; /* darker text for better contrast */
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 227 39% 15%; /* darker text for better contrast */
 
     --primary: 213.1 93.9% 67.8%; /* electric-blue */
-    --primary-foreground: 210 40% 98%;
+    --primary-foreground: 227 39% 15%; /* darker text */
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 210 40% 90%; /* slightly darker for better contrast */
+    --secondary-foreground: 227 39% 15%; /* darker text */
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 210 40% 90%; /* slightly darker for better contrast */
+    --muted-foreground: 227 39% 40%; /* darker muted text */
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 210 40% 90%; /* slightly darker for better contrast */
+    --accent-foreground: 227 39% 15%; /* darker text */
 
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive-foreground: 0 0% 98%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
+    --border: 214.3 31.8% 85%; /* slightly darker for better contrast */
+    --input: 214.3 31.8% 85%; /* slightly darker for better contrast */
     --ring: 213.1 93.9% 67.8%; /* electric-blue */
 
     --radius: 0.5rem;
@@ -47,42 +48,7 @@
   }
 
   .dark {
-    --background: 227 39% 8%; /* navy-dark */
-    --foreground: 240 5% 96%; /* neutral-light */
-
-    --card: 227 39% 12%; /* slightly lighter navy-dark for cards */
-    --card-foreground: 240 5% 96%; /* neutral-light */
-
-    --popover: 227 39% 8%; /* navy-dark */
-    --popover-foreground: 240 5% 96%; /* neutral-light */
-
-    --primary: 213.1 93.9% 67.8%; /* electric-blue */
-    --primary-foreground: 240 5% 96%; /* neutral-light */
-
-    --secondary: 227 39% 15%; /* slightly lighter navy */
-    --secondary-foreground: 240 5% 96%; /* neutral-light */
-
-    --muted: 227 39% 15%; /* slightly lighter navy */
-    --muted-foreground: 240 5% 65%;
-
-    --accent: 227 39% 15%; /* slightly lighter navy */
-    --accent-foreground: 240 5% 96%; /* neutral-light */
-
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 240 5% 96%; /* neutral-light */
-
-    --border: 227 39% 20%; /* slightly lighter navy */
-    --input: 227 39% 20%; /* slightly lighter navy */
-    --ring: 213.1 93.9% 67.8%; /* electric-blue */
-    
-    --sidebar-background: 227 39% 8%; /* navy-dark */
-    --sidebar-foreground: 240 5% 96%; /* neutral-light */
-    --sidebar-primary: 213.1 93.9% 67.8%; /* electric-blue */
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 227 39% 15%; /* slightly lighter navy */
-    --sidebar-accent-foreground: 240 5% 96%; /* neutral-light */
-    --sidebar-border: 227 39% 15%; /* slightly lighter navy */
-    --sidebar-ring: 213.1 93.9% 67.8%; /* electric-blue */
+    /* ... keep existing code (dark theme variables) */
   }
 }
 
@@ -97,7 +63,17 @@
   }
 
   body {
-    @apply bg-gradient-to-br from-[#0A0F1C] via-[#0E172A] to-[#020409] text-foreground antialiased min-h-screen;
+    @apply bg-background text-foreground antialiased;
+  }
+
+  /* Light mode specific overrides */
+  .light body {
+    @apply bg-white;
+  }
+  
+  /* Add improved light mode background gradient */
+  .light #root {
+    @apply bg-gradient-to-br from-white via-gray-50 to-blue-50 min-h-screen;
   }
 }
 
@@ -105,8 +81,18 @@
   .glass-card {
     @apply bg-white/5 backdrop-blur-md border border-white/10 shadow-lg;
   }
+  
+  /* Add better light mode glass card style */
+  .light .glass-card {
+    @apply bg-white/80 backdrop-blur-md border border-gray-200/50 shadow-md;
+  }
 
   .text-gradient {
     @apply bg-gradient-to-r from-electric-blue to-white bg-clip-text text-transparent;
+  }
+  
+  /* Add better light mode text gradient */
+  .light .text-gradient {
+    @apply bg-gradient-to-r from-electric-blue to-navy-dark bg-clip-text text-transparent;
   }
 }
