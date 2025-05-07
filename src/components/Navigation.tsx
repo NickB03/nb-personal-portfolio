@@ -21,20 +21,20 @@ const Navigation = () => {
         <div className="w-8"></div>
 
         <div className="hidden md:flex space-x-8">
-          <a href="#projects" className="text-white/80 hover:text-electric-blue transition-colors">
+          <a href="#projects" className="text-foreground/80 hover:text-electric-blue transition-colors dark:text-white/80">
             Projects
           </a>
-          <a href="#about" className="text-white/80 hover:text-electric-blue transition-colors">
+          <a href="#about" className="text-foreground/80 hover:text-electric-blue transition-colors dark:text-white/80">
             About
           </a>
-          <a href="#contact" className="text-white/80 hover:text-electric-blue transition-colors">
+          <a href="#contact" className="text-foreground/80 hover:text-electric-blue transition-colors dark:text-white/80">
             Contact
           </a>
         </div>
 
         <div className="flex items-center space-x-4">
           <ThemeToggle />
-          <Button className="glass-card hover:bg-electric-blue/20 text-white hover:ring-2 ring-electric-blue/50 transition-all duration-300" asChild>
+          <Button className="bg-electric-blue hover:bg-electric-blue/90 text-white dark:glass-card dark:hover:bg-electric-blue/20 dark:hover:ring-2 dark:ring-electric-blue/50 transition-all duration-300" asChild>
             <a
               href="https://www.linkedin.com/in/nickbohmer/"
               target="_blank"

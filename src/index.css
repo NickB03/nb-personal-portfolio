@@ -1,3 +1,4 @@
+
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
 @tailwind base;
@@ -44,6 +45,9 @@
     --sidebar-accent-foreground: 240 5.9% 10%;
     --sidebar-border: 220 13% 91%;
     --sidebar-ring: 217.2 91.2% 59.8%;
+    
+    /* Define a darker blue color */
+    --electric-blue-dark: 213 70% 40%;
   }
 
   .dark {
@@ -126,11 +130,11 @@
   }
 
   .text-gradient {
-    @apply bg-gradient-to-r from-electric-blue to-navy-dark bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-navy-dark to-electric-blue bg-clip-text text-transparent;
   }
   
   /* Different gradient for dark mode */
   .dark .text-gradient {
-    @apply bg-gradient-to-r from-electric-blue to-white bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-white to-electric-blue bg-clip-text text-transparent;
   }
 }
