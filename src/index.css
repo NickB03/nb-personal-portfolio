@@ -48,6 +48,8 @@
     
     /* Define a darker blue color */
     --electric-blue-dark: 213 70% 40%;
+    --superhuman-blue: 220 60% 36%;
+    --superhuman-purple: 250 40% 40%;
   }
 
   .dark {
@@ -113,9 +115,16 @@
     @apply bg-white;
   }
   
-  /* Add improved light mode background gradient */
+  /* Superhuman-inspired gradient background */
   .light #root {
-    @apply bg-gradient-to-br from-white via-gray-50 to-blue-50 min-h-screen;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    min-height: 100vh;
+  }
+  
+  /* Dark mode gradient */
+  .dark #root {
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+    min-height: 100vh;
   }
 }
 
@@ -130,11 +139,16 @@
   }
 
   .text-gradient {
-    @apply bg-gradient-to-r from-navy-dark to-electric-blue bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-superhuman-blue to-superhuman-purple bg-clip-text text-transparent;
   }
   
   /* Different gradient for dark mode */
   .dark .text-gradient {
     @apply bg-gradient-to-r from-white to-electric-blue bg-clip-text text-transparent;
+  }
+  
+  /* Superhuman-inspired button styles */
+  .superhuman-button {
+    @apply bg-gradient-to-r from-superhuman-blue to-superhuman-purple text-white transition-all duration-300;
   }
 }

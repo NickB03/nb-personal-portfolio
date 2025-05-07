@@ -1,3 +1,4 @@
+
 import { Moon, Sun } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useTheme } from "@/providers/ThemeProvider";
@@ -49,7 +50,7 @@ export function ThemeToggle() {
           animate={{ rotate: 360 }}
           transition={{ duration: 0.5 }}
         >
-          <Sun className="h-5 w-5 text-electric-blue hover:text-soft-orange transition-colors" />
+          <Sun className="h-5 w-5 text-superhuman-blue hover:text-superhuman-purple transition-colors" />
         </motion.div>
       ) : (
         <motion.div
@@ -57,7 +58,7 @@ export function ThemeToggle() {
           animate={{ rotate: 360 }}
           transition={{ duration: 0.5 }}
         >
-          <Moon className="h-5 w-5 text-electric-blue hover:text-soft-orange transition-colors" />
+          <Moon className="h-5 w-5 text-superhuman-blue hover:text-superhuman-purple transition-colors" />
         </motion.div>
       )}
     </Button>

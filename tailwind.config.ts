@@ -25,6 +25,8 @@ export default {
         'soft-orange': '#FF8A5C',
         'neutral-light': '#F4F4F5',
         'neutral-dark': '#1F2937',
+        'superhuman-blue': '#2a4365',
+        'superhuman-purple': '#553c9a',
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",

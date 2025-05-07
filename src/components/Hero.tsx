@@ -18,7 +18,7 @@ const Hero = () => {
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gradient">
             Nick Bohmer
           </h1>
-          <p className="text-2xl md:text-3xl text-foreground/90 dark:bg-gradient-to-r dark:from-white/90 dark:to-white/40 dark:bg-clip-text dark:text-transparent">
+          <p className="text-2xl md:text-3xl text-foreground dark:text-white/90">
             AI Innovation Through a Product Lens
           </p>
           <p className="text-lg text-foreground/80 dark:text-white/80">
@@ -27,7 +27,7 @@ const Hero = () => {
           <div className="flex flex-wrap gap-4">
             <Button 
               size="lg" 
-              className="bg-electric-blue hover:bg-electric-blue/90 text-white dark:glass-card dark:hover:bg-electric-blue/20 dark:hover:ring-2 dark:ring-electric-blue/50 transition-all duration-300"
+              className="superhuman-button hover:opacity-90"
               asChild
             >
               <a href="#projects">View Projects</a>
@@ -35,7 +35,7 @@ const Hero = () => {
             <Button 
               size="lg" 
               variant="outline" 
-              className="border-electric-blue/50 text-electric-blue hover:bg-electric-blue/10 hover:ring-2 ring-electric-blue/50 transition-all duration-300 dark:glass-card"
+              className="border-superhuman-blue text-superhuman-blue hover:bg-superhuman-blue/10 hover:ring-2 ring-superhuman-blue/50 transition-all duration-300 dark:glass-card"
               asChild
             >
               <a
@@ -72,8 +72,8 @@ const Hero = () => {
             animate={{ y: [0, 8, 0] }}
             transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
           >
-            <a href="#projects" className="block p-2 rounded-full bg-background/50 backdrop-blur-sm border border-border hover:ring-2 ring-electric-blue/30 transition-all duration-300 dark:glass-card">
-              <ChevronDown className="h-6 w-6 text-electric-blue hover:text-soft-orange transition-colors" />
+            <a href="#projects" className="block p-2 rounded-full bg-background/50 backdrop-blur-sm border border-border hover:ring-2 ring-superhuman-blue/30 transition-all duration-300 dark:glass-card">
+              <ChevronDown className="h-6 w-6 text-superhuman-blue hover:text-superhuman-purple transition-colors" />
             </a>
           </motion.div>
         </motion.div>
