@@ -1,7 +1,11 @@
 
 import { createContext, useContext, useEffect, useState } from "react";
 
-type Theme = "dark" | "light";
+// Update Theme type to include "system"
+type Theme = "dark" | "light" | "system";
+
+// We'll use ActualTheme for what gets applied to the DOM
+type ActualTheme = "dark" | "light";
 
 type ThemeProviderProps = {
   children: React.ReactNode;
@@ -30,36 +34,43 @@ export function ThemeProvider({
   const [theme, setTheme] = useState<Theme>(() => {
     // Check for user's saved preference first
     const savedTheme = localStorage.getItem(storageKey) as Theme | null;
-    if (savedTheme) return savedTheme;
-    
-    // If no saved preference, use system preference
-    if (defaultTheme === "system") {
-      return window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+    if (savedTheme && (savedTheme === "light" || savedTheme === "dark" || savedTheme === "system")) {
+      return savedTheme;
     }
     
     // Fallback to provided defaultTheme
     return defaultTheme;
   });
 
+  // Determine the actual theme to apply to the DOM
+  const applyTheme = (): ActualTheme => {
+    if (theme === "system") {
+      return window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+    }
+    return theme as ActualTheme;
+  };
+
   // Listen for system preference changes
   useEffect(() => {
     const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
     
     const handleChange = (e: MediaQueryListEvent) => {
-      // Only update if user hasn't set a preference
-      if (!localStorage.getItem(storageKey)) {
-        setTheme(e.matches ? "dark" : "light");
+      // Only update the DOM if theme is set to "system"
+      if (theme === "system") {
+        const root = window.document.documentElement;
+        root.classList.remove("light", "dark");
+        root.classList.add(e.matches ? "dark" : "light");
       }
     };
     
     mediaQuery.addEventListener("change", handleChange);
     return () => mediaQuery.removeEventListener("change", handleChange);
-  }, [storageKey]);
+  }, [theme]);
 
   useEffect(() => {
     const root = window.document.documentElement;
     root.classList.remove("light", "dark");
-    root.classList.add(theme);
+    root.classList.add(applyTheme());
     localStorage.setItem(storageKey, theme);
   }, [theme, storageKey]);
 
