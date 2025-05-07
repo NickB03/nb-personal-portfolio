@@ -48,8 +48,9 @@
     
     /* Define a darker blue color */
     --electric-blue-dark: 213 70% 40%;
-    --superhuman-blue: 220 60% 36%;
-    --superhuman-purple: 250 40% 40%;
+    --superhuman-blue: 220 60% 24%;
+    --superhuman-purple: 271 40% 49%;
+    --superhuman-light: 278 49% 69%;
   }
 
   .dark {
@@ -117,13 +118,17 @@
   
   /* Superhuman-inspired gradient background */
   .light #root {
-    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    background: radial-gradient(circle at 65% 15%, rgba(137, 73, 181, 0.3) 0%, rgba(255, 255, 255, 0) 35%), 
+                radial-gradient(circle at 40% 60%, rgba(69, 86, 146, 0.4) 0%, rgba(255, 255, 255, 0) 40%),
+                linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
     min-height: 100vh;
   }
   
-  /* Dark mode gradient */
+  /* Dark mode gradient like Superhuman */
   .dark #root {
-    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+    background: radial-gradient(circle at 65% 15%, rgba(137, 73, 181, 0.3) 0%, rgba(0, 0, 0, 0) 35%), 
+                radial-gradient(circle at 40% 60%, rgba(69, 86, 146, 0.4) 0%, rgba(0, 0, 0, 0) 40%),
+                linear-gradient(135deg, #0A0F1C 0%, #1B1E2D 100%);
     min-height: 100vh;
   }
 }
@@ -139,16 +144,16 @@
   }
 
   .text-gradient {
-    @apply bg-gradient-to-r from-superhuman-blue to-superhuman-purple bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-superhuman-blue via-superhuman-purple to-superhuman-light bg-clip-text text-transparent;
   }
   
   /* Different gradient for dark mode */
   .dark .text-gradient {
-    @apply bg-gradient-to-r from-white to-electric-blue bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-white via-superhuman-light to-electric-blue bg-clip-text text-transparent;
   }
   
   /* Superhuman-inspired button styles */
   .superhuman-button {
-    @apply bg-gradient-to-r from-superhuman-blue to-superhuman-purple text-white transition-all duration-300;
+    @apply bg-gradient-to-r from-superhuman-purple to-superhuman-light text-white transition-all duration-300;
   }
 }

@@ -13,7 +13,7 @@ const Navigation = () => {
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 glass-card border-b border-white/10">
-      <a href="#main-content" className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-superhuman-blue focus:text-white focus:rounded">
+      <a href="#main-content" className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-superhuman-purple focus:text-white focus:rounded">
         Skip to main content
       </a>
 
@@ -21,20 +21,20 @@ const Navigation = () => {
         <div className="w-8"></div>
 
         <div className="hidden md:flex space-x-8">
-          <a href="#projects" className="font-medium text-foreground hover:text-superhuman-blue transition-colors dark:text-white/80">
+          <a href="#projects" className="font-medium text-superhuman-blue hover:text-superhuman-purple transition-colors dark:text-white/90 dark:hover:text-superhuman-light">
             Projects
           </a>
-          <a href="#about" className="font-medium text-foreground hover:text-superhuman-blue transition-colors dark:text-white/80">
+          <a href="#about" className="font-medium text-superhuman-blue hover:text-superhuman-purple transition-colors dark:text-white/90 dark:hover:text-superhuman-light">
             About
           </a>
-          <a href="#contact" className="font-medium text-foreground hover:text-superhuman-blue transition-colors dark:text-white/80">
+          <a href="#contact" className="font-medium text-superhuman-blue hover:text-superhuman-purple transition-colors dark:text-white/90 dark:hover:text-superhuman-light">
             Contact
           </a>
         </div>
 
         <div className="flex items-center space-x-4">
           <ThemeToggle />
-          <Button className="superhuman-button dark:glass-card dark:hover:bg-superhuman-blue/20" asChild>
+          <Button className="superhuman-button dark:glass-card dark:hover:bg-superhuman-purple/30" asChild>
             <a
               href="https://www.linkedin.com/in/nickbohmer/"
               target="_blank"

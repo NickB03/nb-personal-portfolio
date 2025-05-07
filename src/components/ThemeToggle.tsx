@@ -50,7 +50,7 @@ export function ThemeToggle() {
           animate={{ rotate: 360 }}
           transition={{ duration: 0.5 }}
         >
-          <Sun className="h-5 w-5 text-superhuman-blue hover:text-superhuman-purple transition-colors" />
+          <Sun className="h-5 w-5 text-superhuman-light hover:text-white transition-colors" />
         </motion.div>
       ) : (
         <motion.div
