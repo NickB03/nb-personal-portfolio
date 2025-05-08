@@ -45,7 +45,7 @@ const Hero = () => {
                 className="flex items-center gap-2"
               >
                 Message Me on LinkedIn
-                <LinkedinIcon className="h-4 w-4" />
+                <LinkedinIcon className="h-4 w-4 text-electric-blue dark:text-white" />
               </a>
             </Button>
           </div>
@@ -73,7 +73,7 @@ const Hero = () => {
             transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
           >
             <a href="#projects" className="block p-2 rounded-full bg-background/50 backdrop-blur-sm border border-border hover:ring-2 ring-electric-blue/30 transition-all duration-300 dark:glass-card">
-              <ChevronDown className="h-6 w-6 text-electric-blue hover:text-soft-orange transition-colors" />
+              <ChevronDown className="h-6 w-6 text-superhuman-purple hover:text-superhuman-light transition-colors dark:text-electric-blue" />
             </a>
           </motion.div>
         </motion.div>

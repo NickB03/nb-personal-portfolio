@@ -43,7 +43,7 @@ const Navigation = () => {
               aria-label="Connect with Nick Bohmer on LinkedIn"
             >
               Let's Connect
-              <LinkedinIcon className="h-4 w-4 transition-colors hover:text-white" />
+              <LinkedinIcon className="h-4 w-4 text-white" />
             </a>
           </Button>
         </div>
