@@ -34,7 +34,10 @@ const Navigation = () => {
 
         <div className="flex items-center space-x-4">
           <ThemeToggle />
-          <Button className="superhuman-button dark:glass-card dark:hover:bg-superhuman-purple/30" asChild>
+          <Button 
+            className="bg-electric-blue hover:bg-electric-blue/90 text-white dark:glass-card dark:hover:bg-electric-blue/20 dark:hover:ring-2 dark:ring-electric-blue/50 transition-all duration-300" 
+            asChild
+          >
             <a
               href="https://www.linkedin.com/in/nickbohmer/"
               target="_blank"
