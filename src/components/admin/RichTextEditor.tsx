@@ -1,5 +1,5 @@
 
-import { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import {
@@ -40,7 +40,7 @@ const RichTextEditor = ({ initialContent, onChange }: RichTextEditorProps) => {
   const [imageUrl, setImageUrl] = useState("");
   const [imageAlt, setImageAlt] = useState("");
   const [selection, setSelection] = useState<{ start: number; end: number } | null>(null);
-  const editorRef = React.useRef<HTMLDivElement>(null);
+  const editorRef = useRef<HTMLDivElement>(null);
 
   // Initialize the editor with content
   useEffect(() => {
@@ -81,7 +81,8 @@ const RichTextEditor = ({ initialContent, onChange }: RichTextEditorProps) => {
       const range = document.createRange();
       const sel = window.getSelection();
       let charIndex = 0;
-      let nodeStack = [editorRef.current];
+      // Fix the nodeStack type to accept Node objects instead of HTMLDivElement
+      let nodeStack: Node[] = [editorRef.current];
       let node: Node | null = null;
       let foundStart = false;
       let foundEnd = false;
