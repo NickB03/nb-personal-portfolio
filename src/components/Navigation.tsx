@@ -21,13 +21,13 @@ const Navigation = () => {
         <div className="w-8"></div>
 
         <div className="hidden md:flex space-x-8">
-          <a href="#projects" className="font-medium text-superhuman-blue hover:text-superhuman-purple transition-colors dark:text-white/90 dark:hover:text-superhuman-light">
+          <a href="#projects" className="font-medium text-superhuman-blue hover:text-superhuman-purple transition-colors dark:text-electric-blue dark:hover:text-superhuman-light">
             Projects
           </a>
-          <a href="#about" className="font-medium text-superhuman-blue hover:text-superhuman-purple transition-colors dark:text-white/90 dark:hover:text-superhuman-light">
+          <a href="#about" className="font-medium text-superhuman-blue hover:text-superhuman-purple transition-colors dark:text-electric-blue dark:hover:text-superhuman-light">
             About
           </a>
-          <a href="#contact" className="font-medium text-superhuman-blue hover:text-superhuman-purple transition-colors dark:text-white/90 dark:hover:text-superhuman-light">
+          <a href="#contact" className="font-medium text-superhuman-blue hover:text-superhuman-purple transition-colors dark:text-electric-blue dark:hover:text-superhuman-light">
             Contact
           </a>
         </div>
@@ -35,7 +35,7 @@ const Navigation = () => {
         <div className="flex items-center space-x-4">
           <ThemeToggle />
           <Button 
-            className="bg-electric-blue hover:bg-electric-blue/90 text-white dark:glass-card dark:hover:bg-electric-blue/20 dark:hover:ring-2 dark:ring-electric-blue/50 transition-all duration-300" 
+            className="bg-electric-blue hover:bg-electric-blue/90 text-white dark:bg-electric-blue dark:hover:bg-electric-blue/90 transition-all duration-300" 
             asChild
           >
             <a
