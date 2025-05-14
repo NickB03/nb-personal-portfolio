@@ -22,7 +22,7 @@ import { BlogPost } from "@/types/blog";
 import Navigation from "@/components/Navigation";
 import RichTextEditor from "@/components/admin/RichTextEditor";
 import { useAuth } from "@/hooks/useAuth";
-import Badge from "@/components/ui/badge";
+import { Badge } from "@/components/ui/badge";
 
 const BlogEditor = () => {
   const { id } = useParams<{ id: string }>();
