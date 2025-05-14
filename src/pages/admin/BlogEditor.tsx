@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { Button } from "@/components/ui/button";
@@ -23,6 +22,7 @@ import { BlogPost } from "@/types/blog";
 import Navigation from "@/components/Navigation";
 import RichTextEditor from "@/components/admin/RichTextEditor";
 import { useAuth } from "@/hooks/useAuth";
+import Badge from "@/components/ui/badge";
 
 const BlogEditor = () => {
   const { id } = useParams<{ id: string }>();
@@ -123,6 +123,17 @@ const BlogEditor = () => {
     }
   };
 
+  // New function to handle tag input
+  const handleTagsChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setTags(e.target.value);
+  };
+
+  // Preview current tags
+  const tagArray = tags
+    .split(",")
+    .map((tag) => tag.trim())
+    .filter((tag) => tag);
+
   return (
     <div className="min-h-screen bg-background text-foreground">
       <Navigation />
@@ -192,7 +203,7 @@ const BlogEditor = () => {
                   placeholder="https://example.com/image.jpg"
                 />
                 {coverImage && (
-                  <div className="mt-2 rounded-md overflow-hidden h-40">
+                  <div className="mt-2 rounded-md overflow-hidden h-40 border border-electric-blue/30">
                     <img
                       src={coverImage}
                       alt="Cover preview"
@@ -203,14 +214,29 @@ const BlogEditor = () => {
                 )}
               </div>
 
-              <div className="space-y-2">
+              <div className="space-y-4">
                 <Label htmlFor="tags">Tags (comma separated)</Label>
                 <Input
                   id="tags"
                   value={tags}
-                  onChange={(e) => setTags(e.target.value)}
+                  onChange={handleTagsChange}
                   placeholder="Web Development, Design, Technology"
                 />
+                
+                {/* Tag preview */}
+                {tagArray.length > 0 && (
+                  <div className="flex flex-wrap gap-2 mt-2">
+                    <p className="text-sm text-gray-500 mr-2 self-center">Preview:</p>
+                    {tagArray.map((tag) => (
+                      <Badge 
+                        key={tag}
+                        className="bg-electric-blue/10 text-superhuman-blue dark:bg-electric-blue/20 dark:text-electric-blue"
+                      >
+                        {tag}
+                      </Badge>
+                    ))}
+                  </div>
+                )}
               </div>
 
               <div className="space-y-2">

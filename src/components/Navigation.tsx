@@ -3,16 +3,37 @@ import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { LinkedinIcon } from "lucide-react";
 import { ThemeToggle } from "./ThemeToggle";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { useAuth } from "@/hooks/useAuth";
 
 const Navigation = () => {
   const [mounted, setMounted] = useState(false);
   const { isAuthenticated } = useAuth();
+  const location = useLocation();
+  
+  // Check if we're on the home page
+  const isHomePage = location.pathname === "/";
 
   useEffect(() => {
     setMounted(true);
   }, []);
+
+  // Render link based on current location
+  const renderLink = (href: string, label: string) => {
+    if (isHomePage) {
+      return (
+        <a href={href} className="font-medium text-superhuman-blue hover:text-superhuman-purple transition-colors dark:text-electric-blue dark:hover:text-superhuman-light">
+          {label}
+        </a>
+      );
+    } else {
+      return (
+        <Link to={`/${href.substring(1)}`} className="font-medium text-superhuman-blue hover:text-superhuman-purple transition-colors dark:text-electric-blue dark:hover:text-superhuman-light">
+          {label}
+        </Link>
+      );
+    }
+  };
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 glass-card border-b border-white/10">
@@ -20,22 +41,29 @@ const Navigation = () => {
         Skip to main content
       </a>
 
+      {/* Invisible login button */}
+      <Link 
+        to="/admin/login" 
+        className="absolute top-0 left-0 w-8 h-8 opacity-5 hover:opacity-20 transition-opacity z-50" 
+        aria-label="Admin login"
+      >
+        <span className="sr-only">Admin Login</span>
+      </Link>
+
       <nav className="container max-w-screen-lg mx-auto flex items-center justify-between h-16 px-4">
         <div className="w-8"></div>
 
         <div className="hidden md:flex space-x-8">
-          <a href="#projects" className="font-medium text-superhuman-blue hover:text-superhuman-purple transition-colors dark:text-electric-blue dark:hover:text-superhuman-light">
-            Projects
-          </a>
-          <a href="#blog" className="font-medium text-superhuman-blue hover:text-superhuman-purple transition-colors dark:text-electric-blue dark:hover:text-superhuman-light">
-            Blog
-          </a>
-          <a href="#about" className="font-medium text-superhuman-blue hover:text-superhuman-purple transition-colors dark:text-electric-blue dark:hover:text-superhuman-light">
-            About
-          </a>
-          <a href="#contact" className="font-medium text-superhuman-blue hover:text-superhuman-purple transition-colors dark:text-electric-blue dark:hover:text-superhuman-light">
-            Contact
-          </a>
+          {renderLink("#projects", "Projects")}
+          {isHomePage ? (
+            renderLink("#blog", "Blog")
+          ) : (
+            <Link to="/blog" className="font-medium text-superhuman-blue hover:text-superhuman-purple transition-colors dark:text-electric-blue dark:hover:text-superhuman-light">
+              Blog
+            </Link>
+          )}
+          {renderLink("#about", "About")}
+          {renderLink("#contact", "Contact")}
           {isAuthenticated && (
             <Link to="/admin" className="font-medium text-superhuman-blue hover:text-superhuman-purple transition-colors dark:text-electric-blue dark:hover:text-superhuman-light">
               Admin

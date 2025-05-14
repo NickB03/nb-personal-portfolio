@@ -9,6 +9,7 @@ import { useNavigate } from "react-router-dom";
 import { blogService } from "@/services/blogService";
 import { Input } from "@/components/ui/input";
 import { useAuth } from "@/hooks/useAuth";
+import { motion } from "framer-motion";
 
 const Blog = () => {
   const [posts, setPosts] = useState<BlogPost[]>([]);
@@ -30,11 +31,32 @@ const Blog = () => {
       )
   );
 
+  // Animation variants
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1
+      }
+    }
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.5 } }
+  };
+
   return (
     <div className="min-h-screen bg-background text-foreground">
       <Navigation />
       <div className="container mx-auto max-w-screen-lg px-6 pt-24 pb-16">
-        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8">
+        <motion.div 
+          className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8"
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+        >
           <h1 className="text-3xl md:text-4xl font-bold text-superhuman-blue dark:text-electric-blue">
             Blog
           </h1>
@@ -55,12 +77,17 @@ const Blog = () => {
               </Button>
             )}
           </div>
-        </div>
+        </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+        <motion.div 
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12"
+          variants={containerVariants}
+          initial="hidden"
+          animate="visible"
+        >
           {filteredPosts.length > 0 ? (
             filteredPosts.map((post) => (
-              <div key={post.id} className="relative">
+              <motion.div key={post.id} className="relative" variants={itemVariants}>
                 <BlogCard post={post} />
                 {isAuthenticated && (
                   <Button
@@ -70,13 +97,13 @@ const Blog = () => {
                     onClick={(e) => {
                       e.preventDefault();
                       e.stopPropagation();
-                      navigate(`/admin/blog/edit/${post.id}`);
+                      navigate(`/admin/blog/${post.id}`);
                     }}
                   >
                     <PenIcon className="w-4 h-4" />
                   </Button>
                 )}
-              </div>
+              </motion.div>
             ))
           ) : (
             <div className="col-span-1 md:col-span-3 text-center py-16">
@@ -87,7 +114,7 @@ const Blog = () => {
               </p>
             </div>
           )}
-        </div>
+        </motion.div>
       </div>
     </div>
   );
