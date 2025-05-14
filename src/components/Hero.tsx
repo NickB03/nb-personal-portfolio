@@ -27,7 +27,7 @@ const Hero = () => {
           <div className="flex flex-wrap gap-4">
             <Button 
               size="lg" 
-              className="bg-electric-blue hover:bg-electric-blue/90 text-white dark:glass-card dark:hover:bg-electric-blue/20 dark:hover:ring-2 dark:ring-electric-blue/50 transition-all duration-300"
+              className="bg-electric-blue hover:bg-electric-blue/90 text-white dark:bg-electric-blue dark:hover:bg-electric-blue/90 transition-all duration-300"
               asChild
             >
               <a href="#projects">View Projects</a>
@@ -35,7 +35,7 @@ const Hero = () => {
             <Button 
               size="lg" 
               variant="outline" 
-              className="border-electric-blue/50 text-electric-blue hover:bg-electric-blue/10 hover:ring-2 ring-electric-blue/50 transition-all duration-300 dark:glass-card"
+              className="border-electric-blue/50 text-electric-blue hover:bg-electric-blue/10 hover:ring-2 ring-electric-blue/50 transition-all duration-300 dark:text-electric-blue dark:border-electric-blue/50"
               asChild
             >
               <a
@@ -45,7 +45,7 @@ const Hero = () => {
                 className="flex items-center gap-2"
               >
                 Message Me on LinkedIn
-                <LinkedinIcon className="h-4 w-4 text-electric-blue dark:text-white" />
+                <LinkedinIcon className="h-4 w-4 text-electric-blue dark:text-electric-blue" />
               </a>
             </Button>
           </div>
