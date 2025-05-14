@@ -3,9 +3,12 @@ import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { LinkedinIcon } from "lucide-react";
 import { ThemeToggle } from "./ThemeToggle";
+import { Link } from "react-router-dom";
+import { useAuth } from "@/hooks/useAuth";
 
 const Navigation = () => {
   const [mounted, setMounted] = useState(false);
+  const { isAuthenticated } = useAuth();
 
   useEffect(() => {
     setMounted(true);
@@ -24,12 +27,20 @@ const Navigation = () => {
           <a href="#projects" className="font-medium text-superhuman-blue hover:text-superhuman-purple transition-colors dark:text-electric-blue dark:hover:text-superhuman-light">
             Projects
           </a>
+          <a href="#blog" className="font-medium text-superhuman-blue hover:text-superhuman-purple transition-colors dark:text-electric-blue dark:hover:text-superhuman-light">
+            Blog
+          </a>
           <a href="#about" className="font-medium text-superhuman-blue hover:text-superhuman-purple transition-colors dark:text-electric-blue dark:hover:text-superhuman-light">
             About
           </a>
           <a href="#contact" className="font-medium text-superhuman-blue hover:text-superhuman-purple transition-colors dark:text-electric-blue dark:hover:text-superhuman-light">
             Contact
           </a>
+          {isAuthenticated && (
+            <Link to="/admin" className="font-medium text-superhuman-blue hover:text-superhuman-purple transition-colors dark:text-electric-blue dark:hover:text-superhuman-light">
+              Admin
+            </Link>
+          )}
         </div>
 
         <div className="flex items-center space-x-4">
