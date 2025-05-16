@@ -28,15 +28,31 @@ const RichTextEditor = ({ initialContent, onChange }: RichTextEditorProps) => {
   useEffect(() => {
     if (editorRef.current) {
       editorRef.current.innerHTML = initialContent;
+      
+      // Remove any potential bidirectional override characters
+      const content = editorRef.current.innerHTML;
+      const cleanedContent = content.replace(/[\u202A-\u202E\u2066-\u2069]/g, '');
+      if (cleanedContent !== content) {
+        editorRef.current.innerHTML = cleanedContent;
+        onChange(cleanedContent);
+      }
     }
-  }, [initialContent]);
+  }, [initialContent, onChange]);
 
   // Handle editor content changes
   const handleInput = () => {
     if (editorRef.current) {
+      // Remove any bidirectional override characters that might be inserted
       const content = editorRef.current.innerHTML;
-      setEditorContent(content);
-      onChange(content);
+      const cleanedContent = content.replace(/[\u202A-\u202E\u2066-\u2069]/g, '');
+      
+      if (cleanedContent !== content) {
+        // Only update if we actually cleaned something
+        editorRef.current.innerHTML = cleanedContent;
+      }
+      
+      setEditorContent(cleanedContent);
+      onChange(cleanedContent);
     }
   };
 
@@ -102,7 +118,9 @@ const RichTextEditor = ({ initialContent, onChange }: RichTextEditorProps) => {
       <div
         ref={editorRef}
         contentEditable
+        dir="ltr" 
         className="p-4 min-h-[300px] focus:outline-none prose prose-sm dark:prose-invert max-w-none"
+        style={{ direction: "ltr", unicodeBidi: "isolate" }}
         onInput={handleInput}
         dangerouslySetInnerHTML={{ __html: initialContent }}
       ></div>
